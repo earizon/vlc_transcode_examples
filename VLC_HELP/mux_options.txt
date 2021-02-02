@@ -1,0 +1,71 @@
+ TS muxer (libdvbpsi)
+      --sout-ts-pid-video <integer [-2147483648 .. 2147483647]>
+                                 Video PID
+          Assign a fixed PID to the video stream. The PCR PID will automatically be the video.
+      --sout-ts-pid-audio <integer [-2147483648 .. 2147483647]>
+                                 Audio PID
+          Assign a fixed PID to the audio stream.
+      --sout-ts-pid-spu <integer [-2147483648 .. 2147483647]>
+                                 SPU PID
+          Assign a fixed PID to the SPU.
+      --sout-ts-pid-pmt <integer [-2147483648 .. 2147483647]>
+                                 PMT PID
+          Assign a fixed PID to the PMT
+      --sout-ts-tsid <integer [-2147483648 .. 2147483647]>
+                                 TS ID
+          Assign a fixed Transport Stream ID.
+      --sout-ts-netid <integer [-2147483648 .. 2147483647]>
+                                 NET ID
+          Assign a fixed Network ID (for SDT table)
+      --sout-ts-program-pmt <string>
+                                 PMT Program numbers
+          Assign a program number to each PMT. This requires "Set PID to ID of ES" to be enabled.
+      --sout-ts-es-id-pid, --no-sout-ts-es-id-pid
+                                 Set PID to ID of ES (default disabled)
+          Sets PID to the ID if the incoming ES. This is for use with --ts-es-id-pid, and allows having the same PIDs in the input and output streams.
+          (default disabled)
+      --sout-ts-muxpmt <string>  Mux PMT (requires --sout-ts-es-id-pid)
+          Define the pids to add to each pmt. This requires "Set PID to ID of ES" to be enabled.
+      --sout-ts-sdtdesc <string> SDT Descriptors (requires --sout-ts-es-id-pid)
+          Defines the descriptors of each SDT. Thisrequires "Set PID to ID of ES" to be enabled.
+      --sout-ts-alignment, --no-sout-ts-alignment
+                                 Data alignment (default enabled)
+          Enforces alignment of all access units on PES boundaries. Disabling this might save some bandwidth but introduce incompatibilities. (default enabled)
+      --sout-ts-shaping <integer [-2147483648 .. 2147483647]>
+                                 Shaping delay (ms)
+          Cut the stream in slices of the given duration, and ensure a constant bitrate between the two boundaries. This avoids having huge bitrate peaks,
+          especially for reference frames.
+      --sout-ts-use-key-frames, --no-sout-ts-use-key-frames
+                                 Use keyframes (default enabled)
+          If enabled, and shaping is specified, the TS muxer will place the boundaries at the end of I pictures. In that case, the shaping duration given by
+          the user is a worse case used when no reference frame is available. This enhances the efficiency of the shaping algorithm, since I frames are
+          usually the biggest frames in the stream. (default enabled)
+      --sout-ts-pcr <integer [-2147483648 .. 2147483647]>
+                                 PCR interval (ms)
+          Set at which interval PCRs (Program Clock Reference) will be sent (in milliseconds). This value should be below 100ms. (default is 70ms).
+      --sout-ts-bmin <integer [-2147483648 .. 2147483647]>
+                                 Minimum B (deprecated)
+          This setting is deprecated and not used anymore
+      --sout-ts-bmax <integer [-2147483648 .. 2147483647]>
+                                 Maximum B (deprecated)
+          This setting is deprecated and not used anymore
+      --sout-ts-dts-delay <integer [-2147483648 .. 2147483647]>
+                                 DTS delay (ms)
+          Delay the DTS (decoding time stamps) and PTS (presentation timestamps) of the data in the stream, compared to the PCRs. This allows for some
+          buffering inside the client decoder.
+      --sout-ts-crypt-audio, --no-sout-ts-crypt-audio
+                                 Crypt audio (default disabled)
+          Crypt audio using CSA (default disabled)
+      --sout-ts-crypt-video, --no-sout-ts-crypt-video
+                                 Crypt video (default disabled)
+          Crypt video using CSA (default disabled)
+      --sout-ts-csa-ck <string>  CSA Key
+          CSA encryption key. This must be a 16 char string (8 hexadecimal bytes).
+      --sout-ts-csa2-ck <string> Second CSA Key
+          The even CSA encryption key. This must be a 16 char string (8 hexadecimal bytes).
+      --sout-ts-csa-use <string> CSA Key in use
+          CSA encryption key used. It can be the odd/first/1 (default) or the even/second/2 one.
+      --sout-ts-csa-pkt <integer [-2147483648 .. 2147483647]>
+                                 Packet size in bytes to encrypt
+          Size of the TS packet to encrypt. The encryption routines subtract the TS-header from the value before encrypting.
+

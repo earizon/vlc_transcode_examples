@@ -1,0 +1,37 @@
+ Standard stream output
+      --sout-standard-access <string>
+                                 Output access method
+          Output method to use for the stream.
+      --sout-standard-mux <string>
+                                 Output muxer
+          Muxer to use for the stream.
+      --sout-standard-dst <string>
+                                 Output destination
+          Destination (URL) to use for the stream. Overrides path and bind parameters
+      --sout-standard-bind <string>
+                                 address to bind to (helper setting for dst)
+          address:port to bind vlc to listening incoming streams helper setting for dst,dst=bind+'/'+path. dst-parameter overrides this
+      --sout-standard-path <string>
+                                 filename for stream (helper setting for dst)
+          Filename for stream helper setting for dst, dst=bind+'/'+path, dst-parameter overrides this
+      --sout-standard-sap, --no-sout-standard-sap
+                                 SAP announcing (default disabled)
+          Announce this session with SAP. (default disabled)
+      --sout-standard-name <string>
+                                 Session name
+          This is the name of the session that will be announced in the SDP (Session Descriptor).
+      --sout-standard-description <string>
+                                 Session description
+          This allows you to give a short description with details about the stream, that will be announced in the SDP (Session Descriptor).
+      --sout-standard-url <string>
+                                 Session URL
+          This allows you to give a URL with more details about the stream (often the website of the streaming organization), that will be announced in the
+          SDP (Session Descriptor).
+      --sout-standard-email <string>
+                                 Session email
+          This allows you to give a contact mail address for the stream, that will be announced in the SDP (Session Descriptor).
+      --sout-standard-phone <string>
+                                 Session phone number
+          This allows you to give a contact telephone number for the stream, that will be announced in the SDP (Session Descriptor).
+
+

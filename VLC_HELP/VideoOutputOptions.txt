@@ -1,0 +1,55 @@
+ Video
+ These options allow you to modify the behavior of the video output subsystem. You can for example enable video filters (deinterlacing, image adjusting, etc.). Enable these filters here and configure them in the "video filters" modules section. You can also set many miscellaneous video options.
+      --video, --no-video        Enable video (default enabled)
+          You can completely disable the video output. The video decoding stage will not take place, thus saving some processing power. (default enabled)
+      --grayscale, --no-grayscale
+                                 Grayscale video output (default disabled)
+          Output video in grayscale. As the color information aren't decoded, this can save some processing power. (default disabled)
+  -f, --fullscreen, --no-fullscreen
+                                 Fullscreen video output (default disabled)
+          Start video in fullscreen mode (default disabled)
+      --embedded-video, --no-embedded-video
+                                 Embedded video (default enabled)
+          Embed the video output in the main interface. (default enabled)
+      --xlib, --no-xlib           (default enabled)
+           (default enabled)
+      --drop-late-frames, --no-drop-late-frames
+                                 Drop late frames (default enabled)
+          This drops frames that are late (arrive to the video output after their intended display date). (default enabled)
+      --skip-frames, --no-skip-frames
+                                 Skip frames (default enabled)
+          Enables framedropping on MPEG2 stream. Framedropping occurs when your computer is not powerful enough (default enabled)
+      --quiet-synchro, --no-quiet-synchro
+                                 Quiet synchro (default disabled)
+          This avoids flooding the message log with debug output from the video output synchronization mechanism. (default disabled)
+      --keyboard-events, --no-keyboard-events
+                                 Key press events (default enabled)
+          This enables VLC hotkeys from the (non-embedded) video window. (default enabled)
+      --mouse-events, --no-mouse-events
+                                 Mouse events (default enabled)
+          This enables handling of mouse clicks on the video. (default enabled)
+      --overlay, --no-overlay    Overlay video output (default enabled)
+          Overlay is the hardware acceleration capability of your video card (ability to render video directly). VLC will try to use it by default. (default
+          enabled)
+      --video-on-top, --no-video-on-top
+                                 Always on top (default enabled)
+          Always place the video window on top of other windows. (default enabled)
+      --video-wallpaper, --no-video-wallpaper
+                                 Enable wallpaper mode  (default disabled)
+          The wallpaper mode allows you to display the video as the desktop background. (default disabled)
+      --disable-screensaver, --no-disable-screensaver
+                                 Disable screensaver (default enabled)
+          Disable the screensaver during video playback. (default enabled)
+      --video-title-show, --no-video-title-show
+                                 Show media title on video (default enabled)
+          Display the title of the video on top of the movie. (default enabled)
+      --video-title-timeout <integer [-2147483648 .. 2147483647]>
+                                 Show video title for x milliseconds
+          Show the video title for n milliseconds, default is 5000 ms (5 sec.)
+      --video-title-position {0 (Center), 1 (Left), 2 (Right), 4 (Top), 8 (Bottom), 5 (Top-Left), 6 (Top-Right), 9 (Bottom-Left), 10 (Bottom-Right)}
+                                 Position of video title
+          Place on video where to display the title (default bottom center).
+      --mouse-hide-timeout <integer [-2147483648 .. 2147483647]>
+                                 Hide cursor and fullscreen controller after x milliseconds
+          Hide mouse cursor and fullscreen controller after n milliseconds.
+

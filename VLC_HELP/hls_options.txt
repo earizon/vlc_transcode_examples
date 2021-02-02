@@ -1,0 +1,21 @@
+ HTTP Live streaming output
+      --sout-livehttp-seglen <integer [-2147483648 .. 2147483647]> Segment length
+          Length of TS stream segments
+      --sout-livehttp-numsegs <integer [-2147483648 .. 2147483647]> Number of segments
+          Number of segments to include in index
+      --sout-livehttp-splitanywhere, --no-sout-livehttp-splitanywhere Split segments anywhere (default disabled)
+          Don't require a keyframe before splitting a segment. Needed for audio only. (default disabled)
+      --sout-livehttp-delsegs, --no-sout-livehttp-delsegs
+                                 Delete segments (default enabled)
+          Delete segments when they are no longer needed (default enabled)
+      --sout-livehttp-ratecontrol, --no-sout-livehttp-ratecontrol
+                                 Use muxers rate control mechanism (default disabled)
+          Use muxers rate control mechanism (default disabled)
+      --sout-livehttp-index <string>
+                                 Index file
+          Path to the index file to create
+      --sout-livehttp-index-url <string>
+                                 Full URL to put in index file
+          Full URL to put in index file. Use #'s to represent segment number
+
+

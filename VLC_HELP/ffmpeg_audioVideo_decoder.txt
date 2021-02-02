@@ -1,0 +1,137 @@
+ FFMPEG AUDIO/VIDEO DECODER
+ Various audio and video decoders/encoders delivered by the FFmpeg library. This includes (MS)MPEG4, DivX, SV1,H261, H263, H264, WMV, WMA, AAC, AMR, DV, MJPEG and other codecs
+   Decoding:
+      --ffmpeg-dr, --no-ffmpeg-dr
+                                 Direct rendering (default enabled)
+          Direct rendering (default enabled)
+      --ffmpeg-error-resilience <integer [-2147483648 .. 2147483647]>
+                                 Error resilience
+          FFmpeg can do error resilience.  However, with a buggy encoder (such as the ISO MPEG-4 encoder from M$) this can produce a lot of errors.  Valid
+          values range from 0 to 4 (0 disables all errors resilience).
+      --ffmpeg-workaround-bugs <integer [-2147483648 .. 2147483647]>
+                                 Workaround bugs
+          Try to fix some bugs:
+          1  autodetect
+          2  old msmpeg4
+          4  xvid interlaced
+          8  ump4 
+          16 no padding
+          32 ac vlc
+          64 Qpel chroma.
+          This must be the sum of the values. For example, to fix "ac vlc" and "ump4", enter 40.
+      --ffmpeg-hurry-up, --no-ffmpeg-hurry-up
+                                 Hurry up (default enabled)
+          The decoder can partially decode or skip frame(s) when there is not enough time. It's useful with low CPU power but it can produce distorted
+          pictures. (default enabled)
+      --ffmpeg-skip-frame <integer [-1 .. 4]>
+                                 Skip frame (default=0)
+          Force skipping of frames to speed up decoding (-1=None, 0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames).
+      --ffmpeg-skip-idct <integer [-1 .. 4]>
+                                 Skip idct (default=0)
+          Force skipping of idct to speed up decoding for frame types(-1=None, 0=Default, 1=B-frames, 2=P-frames, 3=B+P frames, 4=all frames).
+      --ffmpeg-vismv <integer [-2147483648 .. 2147483647]>
+                                 Visualize motion vectors
+          You can overlay the motion vectors (arrows showing how the images move) on the image. This value is a mask, based on these values:
+          1 - visualize forward predicted MVs of P frames
+          2 - visualize forward predicted MVs of B frames
+          4 - visualize backward predicted MVs of B frames
+          To visualize all vectors, the value should be 7.
+      --ffmpeg-lowres <integer [0 .. 2]> Low resolution decoding
+          Only decode a low resolution version of the video. This requires less processing power
+      --ffmpeg-fast, --no-ffmpeg-fast Allow speed tricks (default disabled)
+          Allow non specification compliant speedup tricks. Faster but error-prone. (default disabled)
+      --ffmpeg-skiploopfilter {0 (None), 1 (Non-ref), 2 (Bidir), 3 (Non-key), 4 (All)}
+                                 Skip the loop filter for H.264 decoding
+          Skipping the loop filter (aka deblocking) usually has a detrimental effect on quality. However it provides a big speedup for high definition streams.
+      --ffmpeg-debug <integer [-2147483648 .. 2147483647]> Debug mask
+          Set FFmpeg debug mask
+      --ffmpeg-codec <string>    Codec name
+          Internal libavcodec codec name
+      --ffmpeg-hw, --no-ffmpeg-hw Hardware decoding (default disabled)
+          This allows hardware decoding when available. (default disabled)
+      --ffmpeg-threads <integer [-2147483648 .. 2147483647]>
+                                 Threads
+          Number of threads used for decoding, 0 meaning auto
+ENCODING:
+      --sout-ffmpeg-codec <string>
+                                 Codec name
+          Internal libavcodec codec name
+      --sout-ffmpeg-hq {rd,bits,simple}
+                                 Quality level
+          Quality level for the encoding of motions vectors (this can slow down the encoding very much).
+      --sout-ffmpeg-keyint <integer [-2147483648 .. 2147483647]>
+                                 Ratio of key frames
+          Number of frames that will be coded for one key frame.
+      --sout-ffmpeg-bframes <integer [-2147483648 .. 2147483647]>
+                                 Ratio of B frames
+          Number of B frames that will be coded between two reference frames.
+      --sout-ffmpeg-hurry-up, --no-sout-ffmpeg-hurry-up
+                                 Hurry up (default disabled)
+          The encoder can make on-the-fly quality tradeoffs if your CPU can't keep up with the encoding rate. It will disable trellis quantization, then the
+          rate distortion of motion vectors (hq), and raise the noise reduction threshold to ease the encoder's task. (default disabled)
+      --sout-ffmpeg-interlace, --no-sout-ffmpeg-interlace
+                                 Interlaced encoding (default disabled)
+          Enable dedicated algorithms for interlaced frames. (default disabled)
+      --sout-ffmpeg-interlace-me, --no-sout-ffmpeg-interlace-me
+                                 Interlaced motion estimation (default enabled)
+          Enable interlaced motion estimation algorithms. This requires more CPU. (default enabled)
+      --sout-ffmpeg-vt <integer [-2147483648 .. 2147483647]>
+                                 Video bitrate tolerance
+          Video bitrate tolerance in kbit/s.
+      --sout-ffmpeg-pre-me, --no-sout-ffmpeg-pre-me
+                                 Pre-motion estimation (default disabled)
+          Enable the pre-motion estimation algorithm. (default disabled)
+      --sout-ffmpeg-rc-buffer-size <integer [-2147483648 .. 2147483647]>
+                                 Rate control buffer size
+          Rate control buffer size (in kbytes). A bigger buffer will allow for better rate control, but will cause a delay in the stream.
+      --sout-ffmpeg-rc-buffer-aggressivity <float>
+                                 Rate control buffer aggressiveness
+          Rate control buffer aggressiveness.
+      --sout-ffmpeg-i-quant-factor <float>
+                                 I quantization factor
+          Quantization factor of I frames, compared with P frames (for instance 1.0 => same qscale for I and P frames).
+      --sout-ffmpeg-noise-reduction <integer [-2147483648 .. 2147483647]>
+                                 Noise reduction
+          Enable a simple noise reduction algorithm to lower the encoding length and bitrate, at the expense of lower quality frames.
+      --sout-ffmpeg-mpeg4-matrix, --no-sout-ffmpeg-mpeg4-matrix
+                                 MPEG4 quantization matrix (default disabled)
+          Use the MPEG4 quantization matrix for MPEG2 encoding. This generally yields a better looking picture, while still retaining the compatibility with
+          standard MPEG2 decoders. (default disabled)
+      --sout-ffmpeg-qmin <integer [-2147483648 .. 2147483647]>
+                                 Minimum video quantizer scale
+          Minimum video quantizer scale.
+      --sout-ffmpeg-qmax <integer [-2147483648 .. 2147483647]>
+                                 Maximum video quantizer scale
+          Maximum video quantizer scale.
+      --sout-ffmpeg-trellis, --no-sout-ffmpeg-trellis
+                                 Trellis quantization (default disabled)
+          Enable trellis quantization (rate distortion for block coefficients). (default disabled)
+      --sout-ffmpeg-qscale <float>
+                                 Fixed quantizer scale
+          A fixed video quantizer scale for VBR encoding (accepted values: 0.01 to 255.0).
+      --sout-ffmpeg-strict <integer [-2 .. 2]>
+                                 Strict standard compliance
+          Force a strict standard compliance when encoding (accepted values: -2 to 2).
+      --sout-ffmpeg-lumi-masking <float>
+                                 Luminance masking
+          Raise the quantizer for very bright macroblocks (default: 0.0).
+      --sout-ffmpeg-dark-masking <float>
+                                 Darkness masking
+          Raise the quantizer for very dark macroblocks (default: 0.0).
+      --sout-ffmpeg-p-masking <float>
+                                 Motion masking
+          Raise the quantizer for macroblocks with a high temporal complexity (default: 0.0).
+      --sout-ffmpeg-border-masking <float>
+                                 Border masking
+          Raise the quantizer for macroblocks at the border of the frame (default: 0.0).
+      --sout-ffmpeg-luma-elim-threshold <integer [-2147483648 .. 2147483647]>
+                                 Luminance elimination
+          Eliminates luminance blocks when the PSNR isn't much changed (default: 0.0). The H264 specification recommends -4.
+      --sout-ffmpeg-chroma-elim-threshold <integer [-2147483648 .. 2147483647]>
+                                 Chrominance elimination
+          Eliminates chrominance blocks when the PSNR isn't much changed (default: 0.0). The H264 specification recommends 7.
+      --sout-ffmpeg-aac-profile <string>
+                                 Specify AAC audio profile to use
+          Specify the AAC audio profile to use for encoding the audio bitstream. It takes the following options: main, low, ssr (not supported) and ltp
+          (default: main)
+

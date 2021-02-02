@@ -1,0 +1,33 @@
+MPEG Transport Stream demuxer
+--ts-extra-pmt <string>    Extra PMT
+    Allows a user to specify an extra pmt (pmt_pid=pid:stream_type[,...]).
+--ts-es-id-pid, --no-ts-es-id-pid Set id of ES to PID (default enabled)
+    Set the internal ID of each elementary stream handled by VLC to the same value as the PID in the TS stream, instead of 1, 2, 3, etc. Useful to do
+    '#duplicate{..., select="es=<pid>"}'. (default enabled)
+--ts-out <string>          Fast udp streaming
+    Sends TS to specific ip:port by udp (you must know what you are doing).
+--ts-out-mtu <integer [-2147483648 .. 2147483647]> MTU for out mode
+    MTU for out mode.
+--ts-csa-ck <string>       CSA Key
+    CSA encryption key. This must be a 16 char string (8 hexadecimal bytes).
+--ts-csa2-ck <string>      Second CSA Key
+    The even CSA encryption key. This must be a 16 char string (8 hexadecimal bytes).
+--ts-csa-pkt <integer [-2147483648 .. 2147483647]>
+                           Packet size in bytes to decrypt
+    Specify the size of the TS packet to decrypt. The decryption routines subtract the TS-header from the value before decrypting. 
+--ts-silent, --no-ts-silent Silent mode (default disabled)
+    Do not complain on encrypted PES. (default disabled)
+--ts-dump-file <string>    Filename of dump
+    Specify a filename where to dump the TS in.
+--ts-dump-append, --no-ts-dump-append
+                           Append (default disabled)
+    If the file exists and this option is selected, the existing file will not be overwritten. (default disabled)
+--ts-dump-size <integer [-2147483648 .. 2147483647]>
+                           Dump buffer size
+    Tweak the buffer size for reading and writing an integer number of packets. Specify the size of the buffer here and not the number of packets.
+--ts-split-es, --no-ts-split-es Separate sub-streams (default enabled)
+    Separate teletex/dvbs pages into independent ES. It can be useful to turn off this option when using stream output. (default enabled)
+    Seek and position based on a percent byte position, not a PCR generated time position. If seeking doesn't work property, turn on this option.
+    (default disabled)
+
+
