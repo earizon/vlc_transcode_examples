@@ -1,0 +1,4 @@
+[common]
+hls_frag_secs_length=10 
+hls_number_fragments=10
+

@@ -1,0 +1,10 @@
+Input #0, mpegts, from 'BBC-HD.sort.ts':
+  Duration: 00:00:33.57, start: 6664.199400, bitrate: 11912 kb/s
+  Program 4104 
+    Stream #0.0[0x204]: Video: h264 (Main), yuv420p, 1920x1080 [PAR 1:1 DAR 16:9], 54.61 fps, 50 tbr, 90k tbn, 50 tbc
+    Stream #0.1[0x290](eng): Audio: ac3, 48000 Hz, 5.1, s16, 448 kb/s
+    Stream #0.2[0x291](pol): Audio: ac3, 48000 Hz, stereo, s16, 192 kb/s
+    Stream #0.3[0x25e](swe): Subtitle: dvbsub
+    Stream #0.4[0x25f](nor): Subtitle: dvbsub
+    Stream #0.5[0x260](dan): Subtitle: dvbsub
+    Stream #0.6[0x261](tur): Subtitle: dvbsub

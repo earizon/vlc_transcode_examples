@@ -1,0 +1,11 @@
+[test5]
+input=tests/test5.ts
+width=240
+height=160
+video_bitrate=410
+audio_bitrate=192
+audio_codec=copy
+# audio_pid=0x291 # polish
+port=test5
+baseurl=http://192.168.1.12
+

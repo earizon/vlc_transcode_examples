@@ -1,0 +1,10 @@
+[test3]
+input=tests/test3.ts
+width=240
+height=160
+video_bitrate=410
+audio_bitrate=192
+audio_pid=0x291 # polish
+port=test3
+baseurl=http://192.168.1.12
+

@@ -1,0 +1,12 @@
+Input #0, mpegts, from 'DC-HD.sort.ts':
+  Duration: 00:00:32.18, start: 33475.210378, bitrate: 12427 kb/s
+  Program 4102 
+    Stream #0.0[0x201]: Video: h264 (High), yuv420p, 1920x1080 [PAR 1:1 DAR 16:9], 51.32 fps, 50 tbr, 90k tbn, 50 tbc
+    Stream #0.1[0x284](eng): Audio: ac3, 48000 Hz, 5.1, s16, 384 kb/s
+    Stream #0.2[0x259](swe): Subtitle: dvbsub
+    Stream #0.3[0x25a](nor): Subtitle: dvbsub
+    Stream #0.4[0x25b](dan): Subtitle: dvbsub
+    Stream #0.5[0x25d](fin): Subtitle: dvbsub
+    Stream #0.6[0x25c](rum): Subtitle: dvbsub
+    Stream #0.7[0x285](hun): Audio: ac3, 48000 Hz, 5.1, s16, 384 kb/s
+    Stream #0.8[0x286](cze): Audio: ac3, 48000 Hz, 5.1, s16, 384 kb/s

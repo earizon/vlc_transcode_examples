@@ -1,0 +1,11 @@
+Input #0, mpegts, from 'DR3.sort.ts':
+  Duration: 01:51:11.56, start: 24085.100456, bitrate: 59 kb/s
+  Program 2030 
+    Stream #0.0[0x5a]: Data: [5][0][0][0] / 0x0005
+    Stream #0.1[0x5b]: Data: [11][0][0][0] / 0x000B
+    Stream #0.2[0x7ef](dan): Subtitle: [6][0][0][0] / 0x0006
+    Stream #0.3[0x907]: Video: h264 (High), yuv420p, 1280x720 [PAR 1:1 DAR 16:9], 53.26 fps, 50 tbr, 90k tbn, 100 tbc
+    Stream #0.4[0x911](dan): Audio: aac_latm, 48000 Hz, stereo, s16
+    Stream #0.5[0x915](dan): Audio: aac_latm, 48000 Hz, 5.1, s16
+    Stream #0.6[0x91f](dan): Subtitle: dvbsub
+    Stream #0.7[0x920](dan): Subtitle: dvbsub (hearing impaired)

@@ -1,0 +1,14 @@
+Input #0, mpegts, from 'france2.ts':
+  Duration: 00:01:20.17, start: 92580.572611, bitrate: 4897 kb/s
+  Program 1282 
+    Stream #0.0[0xdc]: Video: h264 (High), yuv420p, 1920x1080 [PAR 1:1 DAR 16:9], 26.04 fps, 25 tbr, 90k tbn, 50 tbc
+    Stream #0.1[0xe6](fra): Audio: eac3, 48000 Hz, 5.1, s16, 256 kb/s
+    Stream #0.2[0xe7](qaa): Audio: eac3, 48000 Hz, stereo, s16, 128 kb/s
+    Stream #0.3[0xe8](qad): Audio: eac3, 48000 Hz, stereo, s16, 128 kb/s
+    Stream #0.4[0xf0](fra): Subtitle: dvbsub (hearing impaired)
+    Stream #0.5[0xf1](fra): Subtitle: dvbsub
+    Stream #0.6[0x10e]: Data: [5][0][0][0] / 0x0005
+    Stream #0.7[0x10f]: Data: [11][0][0][0] / 0x000B
+    Stream #0.8[0x110]: Data: [12][0][0][0] / 0x000C
+    Stream #0.9[0x111]: Data: [255][0][0][0] / 0x00FF
+    Stream #0.10[0x112]: Data: [255][0][0][0] / 0x00FF
