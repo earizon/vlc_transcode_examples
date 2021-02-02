@@ -8,5 +8,8 @@ a TDT source in Europe and stream it in real time to a remote
 peer in a different country with a low band width connection 
 in real time.
 
+VLC also support a command line interface to integrate
+with easy into a server for 24x7 service. 
+
 
 
